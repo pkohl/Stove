@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Stove {
 	// Our stove will have 4 burners
 	public final static int NUM_BURNERS = 4;
-	private ArrayList<Burner> burners; 
+	private static ArrayList<Burner> burners; 
 	
 	public Stove() 
 	{
@@ -82,6 +82,20 @@ public class Stove {
 		Stove stove = new Stove();
 		System.out.println("Beginning stove state ");
 		stove.displayStove();
+		
+		burners.get(0).plusButton();
+		System.out.println("Burner 0 up one notch");
+		stove.displayStove();
+
+		burners.get(2).plusButton();
+		burners.get(2).plusButton();
+		System.out.println("Burner 2 up two notches");
+		stove.displayStove();
+
+		burners.get(2).minusButton();
+		System.out.println("Burner 2 down one notch");
+		stove.displayStove();
+
 	}
 
 }
